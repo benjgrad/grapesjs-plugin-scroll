@@ -29,11 +29,11 @@ Scroll animations component for GrapesJs
 
 | Option          | Description                      | Example                                                                                         |
 | --------------- | -------------------------------- | ----------------------------------------------------------------------------------------------- |
-| `content`        | A function returning the html content of the Scroll-content component as a string              | ``(prefix, componentType) => `<h3 data-gjs-type="${componentType}" class="${prefix}-h3">Section Text</h3>` ``
-| `innerStyles`        | A function returning the css styles of the Scroll-content component as a string              | ``(prefix) => `.${prefix}-container h1{ font-size: 3rem;}` ``
-| `prefix`        | The string that preceds every class              | `gjs-scroll` (default)
-| `styles`        | A function returning the html content of the Scroll-content component as a string              | ``(prefix) =>  `.${prefix}-container { min-height: 100vh; }``
-| `blockName`        | The name of the block as it appears in the block manager              | `Scroll` (default)
+| `gjsScrollContent`        | A function returning the html content of the Scroll-content component as a string              | ``(prefix, componentType) => `<h3 data-gjs-type="${componentType}" class="${prefix}-h3">Section Text</h3>` ``
+| `gjsScrollInnerStyles`        | A function returning the css styles of the Scroll-content component as a string              | ``(prefix) => `.${prefix}-container h1{ font-size: 3rem;}` ``
+| `gjsScrollPrefix`        | The string that preceds every class              | `gjs-scroll` (default)
+| `gjsScrollStyles`        | A function returning the html content of the Scroll-content component as a string              | ``(prefix) =>  `.${prefix}-container { min-height: 100vh; }``
+| `gjsScrollBlockName`        | The name of the block as it appears in the block manager              | `Scroll` (default)
 
 
 

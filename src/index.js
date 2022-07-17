@@ -9,22 +9,23 @@ import {
 } from './config';
 
 export default grapesjs.plugins.add('gjs-scroll', (editor, opts = {}) => {
-  const componentType = 'scroll';
+  const gjsScrollComponentType = 'gjs-scroll';
 
-  const prefix = opts.prefix ?? "gjs-scroll";
+  const gjsScrollPrefix = opts.gjsScrollPrefix ?? "gjs-scroll";
 
-  const innerComponentType = `${componentType}-content`;
+  const innerComponentType = `${gjsScrollComponentType}-content`;
 
   let config = {
     ...opts,
-    prefix,
-    script,
-    styles: opts.styles ?? defaultStyles(prefix),
-    innerStyles: opts.styles ?? defaultInnerStyles(prefix),
-    componentType,
-    blockName: opts.blockName ?? "Scroll",
-    content: `<div data-gjs-type="${componentType}" class="${prefix}-container ${prefix}-reveal">
-        ${opts.content ?? defaultContent(prefix, innerComponentType)}
+    gjsScrollPrefix,
+    gjsScrollScript: script,
+    gjsScrollStyles: opts.gjsScrollStyles ?? defaultStyles(gjsScrollPrefix),
+    gjsScrollInnerStyles: opts.gjsScrollPrefix ?? defaultInnerStyles(gjsScrollPrefix),
+    gjsScrollComponentType,
+    gjsScrollInnerComponentType: innerComponentType,
+    gjsScrollBlockName: opts.gjsScrollBlockName ?? "Scroll",
+    gjsScrollContent: `<div data-gjs-type="${gjsScrollComponentType}" class="${gjsScrollPrefix}-container ${gjsScrollPrefix}-reveal">
+        ${opts.gjsScrollContent ?? defaultContent(gjsScrollPrefix, innerComponentType)}
     </div>`,
   };
 

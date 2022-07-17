@@ -1,7 +1,7 @@
 
 export default function addBlocks(editor, opts) {
-  const prefix = opts.prefix ?? "gjs-scroll";
-  const componentType = opts.componentType;
+  const prefix = opts.gjsScrollPrefix ?? "gjs-scroll";
+  const componentType = opts.gjsScrollComponentType;
   editor.BlockManager.add(componentType, {
     label: `
         <!-- I'm not making this icon configurable. It's the first SVG I ever made and I'm very proud of it-->
@@ -17,8 +17,8 @@ export default function addBlocks(editor, opts) {
         </g>
        </svg>
        <title>To add a scroll effect, create a transition and transform on the .${prefix}-reveal.${prefix}-active class.</title>
-    <div class="gjs-block-label">${opts.blockName}</div>`,
+    <div class="gjs-block-label">${opts.gjsScrollBlockName}</div>`,
     category: 'Extra',
-    content: opts.content,
+    content: opts.gjsScrollContent,
   });
 }

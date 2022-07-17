@@ -1,12 +1,12 @@
 
 
 export function addComponents(editor, opts) {
-  const prefix = opts.prefix;
-  const componentType = opts.componentType;
-  const innerComponentType = opts.innerComponentType;
+  const prefix = opts.gjsScrollPrefix;
+  const componentType = opts.gjsScrollComponentType;
+  const innerComponentType = opts.gjsScrollInnerComponentType;
 
-  const styles = opts.styles;
-  const script = opts.script;
+  const styles = opts.gjsScrollStyles;
+  const script = opts.gjsScrollScript;
 
   editor.DomComponents.addType(innerComponentType, {
     isComponent: (el) => {
@@ -23,7 +23,7 @@ export function addComponents(editor, opts) {
         components: `
         <div data-gjs-type="${componentType}" class="${prefix}-container ${prefix}-reveal">
         </div>`,
-        styles: opts.innerStyles,
+        styles: opts.gjsScrollInnerStyles,
         traits: [
           {
             type: 'number',
