@@ -8,6 +8,15 @@ export function addComponents(editor, opts) {
   const styles = opts.gjsScrollStyles;
   const script = opts.gjsScrollScript;
 
+  const defaultType = editor.DomComponents.getType('default');
+  const defaultModel = defaultType.model;
+  let traits = [...defaultModel.prototype.defaults.traits];
+  traits.push({
+    type: 'number',
+    name: 'threshold',
+    changeProp: true,
+  });
+
   editor.DomComponents.addType(innerComponentType, {
     isComponent: (el) => {
       if (el.getAttribute &&
@@ -24,14 +33,6 @@ export function addComponents(editor, opts) {
         <div data-gjs-type="${componentType}" class="${prefix}-container ${prefix}-reveal">
         </div>`,
         styles: opts.gjsScrollInnerStyles,
-        traits: [
-          {
-            type: 'number',
-            name: 'threshold',
-            changeProp: true,
-          }
-        ],
-        'script-props': ['threshold', 'prefix'],
       }
     }
   });
@@ -44,7 +45,6 @@ export function addComponents(editor, opts) {
         return { type: componentType };
       }
     },
-
     // Model definition
     model: {
       // Default properties
@@ -61,12 +61,12 @@ export function addComponents(editor, opts) {
         styles: styles,
         traits: [
           {
-            type: 'number',
+            type: 'gjs-scroll-threshold',
             name: 'threshold',
             changeProp: true,
           }
         ],
-        'script-props': ['threshold', 'prefix'],
+        'script-props': ['threshold', 'prefix', 'id'],
       }
     }
   });

@@ -15,24 +15,24 @@ export const content = (prefix, componentType) => `
 </div>`
 
 export const script = function (props) {
-    const prefix = props.prefix;
-    const threshold = props.threshold;
-    const reveal = function () {
-        var reveals = document.querySelectorAll(`.${prefix}-reveal`);
+  const prefix = props.prefix;
+  const reveal = function () {
+    var reveals = document.querySelectorAll(`.${prefix}-reveal`);
 
-        for (var i = 0; i < reveals.length; i++) {
-            var windowHeight = window.innerHeight;
-            var elementTop = reveals[i].getBoundingClientRect().top;
-            var elementVisible = threshold;
+    for (var i = 0; i < reveals.length; i++) {
+      const threshold = reveals[i].getAttribute("threshold") ?? 150;
+      var windowHeight = window.innerHeight;
+      var elementTop = reveals[i].getBoundingClientRect().top;
+      var elementVisible = threshold;
 
-            if (elementTop < windowHeight - elementVisible) {
-                reveals[i].classList.add(`${prefix}-active`);
-            } else {
-                reveals[i].classList.remove(`${prefix}-active`);
-            }
-        }
-    };
-    window.addEventListener("scroll", reveal);
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add(`${prefix}-active`);
+      } else {
+        reveals[i].classList.remove(`${prefix}-active`);
+      }
+    }
+  };
+  window.addEventListener("scroll", reveal);
 };
 
 export const innerStyles = (prefix) => `
