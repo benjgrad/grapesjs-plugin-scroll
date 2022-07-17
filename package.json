@@ -1,6 +1,6 @@
 {
   "name": "grapesjs-plugin-scroll",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Scroll animations component for GrapesJs",
   "main": "dist/grapesjs-plugin-scroll.min.js",
   "scripts": {
