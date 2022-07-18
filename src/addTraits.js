@@ -1,10 +1,5 @@
-
-
-
-
 export function addTraits(editor, opts) {
     editor.TraitManager.addType('gjs-scroll-threshold', {
-        noLabel: true,
         events: {
             'change': 'onChange',
         },
@@ -14,11 +9,7 @@ export function addTraits(editor, opts) {
             const el = document.createElement('div');
             el.className = "gjs-trt-trait gjs-trt-trait--number";
             el.innerHTML = `
-            <div class="gjs-label-wrp" data-label=""><div class="gjs-label" title="Threshold">Threshold</div></div>
-            <div class="gjs-field-wrp gjs-field-wrp--number" data-input="">
-                <div class="gjs-field gjs-field-number" data-input=""><div class="gjs-field-int">
-            <span class="gjs-input-holder"><input class="gjs-scroll-thresh" type="number" placeholder=""></span>
-            </div>
+                <input class="gjs-scroll-thresh" type="number" placeholder="150">
             `;
 
             return el;
