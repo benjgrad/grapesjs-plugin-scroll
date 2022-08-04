@@ -17,18 +17,27 @@ export const content = (prefix, componentType) => `
 export const script = function (props) {
   const prefix = props.prefix;
   const reveal = function () {
-    var reveals = document.querySelectorAll(`.${prefix}-reveal`);
+    var reveals = document.querySelectorAll(`.${prefix}-container`);
 
     for (var i = 0; i < reveals.length; i++) {
       const threshold = reveals[i].getAttribute("threshold") ?? 150;
+      let animationType = reveals[i].getAttribute("scrollType");
+      if (!animationType) {
+        animationType = "";
+      }
+      else {
+        animationType = animationType + "_";
+      }
+
+
       var windowHeight = window.innerHeight;
       var elementTop = reveals[i].getBoundingClientRect().top;
       var elementVisible = threshold;
 
       if (elementTop < windowHeight - elementVisible) {
-        reveals[i].classList.add(`${prefix}-active`);
+        reveals[i].classList.add(`${animationType}${prefix}-active`);
       } else {
-        reveals[i].classList.remove(`${prefix}-active`);
+        reveals[i].classList.remove(`${animationType}${prefix}-active`);
       }
     }
   };
@@ -95,14 +104,14 @@ export const styles = (prefix) => `
   margin: 100px;
 }
 
-.${prefix}-reveal{
+.${prefix}-inactive{
   position: relative;
   transform: translateY(150px);
   opacity: 0;
   transition: 1s all ease;
 }
 
-.${prefix}-reveal.${prefix}-active{
+.${prefix}-inactive.${prefix}-active{
   transform: translateY(0);
   opacity: 1;
 }

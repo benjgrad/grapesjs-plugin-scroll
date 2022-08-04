@@ -63,10 +63,17 @@ export function addComponents(editor, opts) {
           {
             type: 'gjs-scroll-threshold',
             name: 'threshold',
+            label: 'Threshold',
+            changeProp: true,
+          },
+          {
+            type: 'gjs-scroll-animation-type',
+            name: 'gjs-scroll-type',
+            label: 'Type',
             changeProp: true,
           }
         ],
-        'script-props': ['threshold', 'prefix', 'id'],
+        'script-props': ['threshold', 'prefix', 'id', 'gjs-scroll-type'],
       }
     }
   });

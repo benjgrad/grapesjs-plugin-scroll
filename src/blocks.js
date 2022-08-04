@@ -16,7 +16,7 @@ export default function addBlocks(editor, opts) {
          </g>
         </g>
        </svg>
-       <title>To add a scroll effect, create a transition and transform on the .${prefix}-reveal.${prefix}-active class.</title>
+       <title>To add a scroll effect, create a transition and transform on the .(type)_${prefix}-inactive.(type)_${prefix}-active class.</title>
     <div class="gjs-block-label">${opts.gjsScrollBlockName}</div>`,
     category: 'Extra',
     content: opts.gjsScrollContent,

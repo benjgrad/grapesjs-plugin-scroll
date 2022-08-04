@@ -1,6 +1,6 @@
 {
   "name": "grapesjs-plugin-scroll",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Scroll animations component for GrapesJs",
   "main": "dist/grapesjs-plugin-scroll.min.js",
   "scripts": {
@@ -11,6 +11,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/benjgrad/grapesjs-plugin-scroll"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "keywords": [
     "grapesjs",

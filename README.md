@@ -122,13 +122,17 @@ $ npm start
 ```
 ## Usage 
 
-The animations trigger when the style class `gjs-scroll-active` is added to the html element, which happens when the user scrolls past a threshold. This means that if you want to edit the animation, you will need to edit the transition or transform with the class selected. The style class `gjs-scroll-reveal` alternatively, will be used when the user scrolls up. In the example above, the opacity is set to 0 and the element is moved down by the styles of `gjs-scroll-reveal` until the user scrolls past the threshold. Once the user scrolls past the threshold, the styles of `gjs-scroll-active` will set the opacity to 1 (so it can be seen) and move the element up.
+The animations trigger when the style class `gjs-scroll-active` is added to the html element, which happens when the user scrolls past a threshold. This means that if you want to edit the animation, you will need to edit the transition or transform with the class selected. The style class `gjs-scroll-inactive` alternatively, will be used when the user scrolls up. In the example above, the opacity is set to 0 and the element is moved down by the styles of `gjs-scroll-inactive` until the user scrolls past the threshold. Once the user scrolls past the threshold, the styles of `gjs-scroll-active` will set the opacity to 1 (so it can be seen) and move the element up.
 
 <p align="center"><img src="./public/Screenshot.png" alt="GrapesJS Tabs" align="center"/></p>
 
-To edit animations that will apply before the user hits the scroll threshold, select the class `gjs-scroll-reveal` in the style manager. You can then edit any of the attributes in the style manager, including the animation, which can be found under  Extra.
+To edit animations that will apply before the user hits the scroll threshold, select the class `gjs-scroll-inactive` in the style manager. You can then edit any of the attributes in the style manager, including the animation, which can be found under Extra.
 
-To edit animations that will apply  after  the user reaches the scroll threshold, select the class `gjs-scroll-active` in the style manager. These style changes will only apply as long as the user has passed the scroll threshold. If they scroll up, the element will be reset and the changes will take place again once the user scrolls down. 
+To edit animations that will apply after the user reaches the scroll threshold, select the class `gjs-scroll-active` in the style manager. These style changes will only apply as long as the user has passed the scroll threshold. If they scroll up, the element will be reset and the changes will take place again once the user scrolls down. 
+
+### Multiple Animations
+
+To use a variety of different animations in your site, specify the animation type in the settings. This will add the type prefix to your classes. For example, if your Type is "disappear", your new classes will be `disappear_gjs-scroll-inactive` and `disappear_gjs-scroll-active`. You can then specify the animation that will trigger when the scroll threshold is hit as described above. 
 
 ## License
 
