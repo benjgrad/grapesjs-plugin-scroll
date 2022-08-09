@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint src",
     "build": "grapesjs-cli build",
-    "start": "grapesjs-cli serve"
+    "start": "grapesjs-cli serve -p 3000"
   },
   "repository": {
     "type": "git",
