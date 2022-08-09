@@ -1,5 +1,5 @@
 {
-  "name": "grapesjs-plugin-scroll",
+  "name": "@benjgrad/grapesjs-plugin-scroll",
   "version": "1.0.7",
   "description": "Scroll animations component for GrapesJs",
   "main": "dist/grapesjs-plugin-scroll.min.js",
